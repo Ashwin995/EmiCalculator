@@ -19,12 +19,10 @@ public class MainActivity<cal_EMI> extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         principle =(EditText) findViewById(R.id.principle);
         rate =(EditText) findViewById(R.id.rate);
         time=(EditText) findViewById(R.id.time);
         Amt =(TextView) findViewById(R.id.Amt);
-
     }
 
     public void calculateEMI(View v){
@@ -39,10 +37,6 @@ public class MainActivity<cal_EMI> extends AppCompatActivity {
             double pValue= Double.parseDouble(principleStr);
             double rValue = Double.parseDouble(rateStr);
             double mValue = Double.parseDouble(monthStr);
-
-//            double EMI = (pValue * (rValue/12/100) * (Math.pow(1+ rValue, mValue*12)))/(Math.pow(1+ rValue, mValue*12)-1);
-//            result.setText(String.valueOf(EMI));
-
             double P = cal_p(pValue);
             double R = cal_r(rValue);
             double N = cal_n(mValue);
@@ -84,9 +78,6 @@ public class MainActivity<cal_EMI> extends AppCompatActivity {
         DecimalFormat form_value= new DecimalFormat("#.##");
         return Double.valueOf(form_value.format(a));
     }
-
-
-
 }
 
 
