@@ -10,10 +10,10 @@ import java.text.DecimalFormat;
 
 public class MainActivity<cal_EMI> extends AppCompatActivity {
 
-    private TextView result;
+    private TextView Amt;
     private EditText principle;
     private EditText rate;
-    private EditText month;
+    private EditText time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,15 @@ public class MainActivity<cal_EMI> extends AppCompatActivity {
 
         principle =(EditText) findViewById(R.id.principle);
         rate =(EditText) findViewById(R.id.rate);
-        month=(EditText) findViewById(R.id.month);
-        result =(TextView) findViewById(R.id.result);
+        time=(EditText) findViewById(R.id.time);
+        Amt =(TextView) findViewById(R.id.Amt);
 
     }
 
     public void calculateEMI(View v){
         String principleStr = principle.getText().toString();
         String rateStr = rate.getText().toString();
-        String monthStr = month.getText().toString();
+        String monthStr = time.getText().toString();
 
         if (principleStr !=null && !"".equals(principleStr) &&
                 rateStr != null && !"".equals(rateStr) &&
@@ -50,8 +50,8 @@ public class MainActivity<cal_EMI> extends AppCompatActivity {
             double D2 = cal_d2(P, R, D1);
             double D3= cal_D3(D1);
             double EMI = cal_EMI(D2, D3);
-            String EMILabel = " Your EMI is Rs : " + roundTwoDecimals(EMI);
-            result.setText(EMILabel);
+            String EMILabel = "EMI = Rs. " + roundTwoDecimals(EMI);
+            Amt.setText(EMILabel);
         }
     }
     private double cal_p(double pValue) {

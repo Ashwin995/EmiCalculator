@@ -12,7 +12,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
+        android:layout_marginBottom="50dp"
+        android:background="#573F51B5"
+        android:fontFamily="monospace"
         android:text="EMI Calculator"
         android:textColor="#000000"
         android:textSize="30sp"></TextView>
@@ -23,13 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter principle"
+        android:fontFamily="monospace"
         android:textColor="@color/navy"
         android:textSize="15dp"></TextView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/principle"
-        android:hint="RS: 000000"
+        android:hint="In Rs."
         android:textSize="15dp"
         android:inputType="numberDecimal"
         android:singleLine="true"
@@ -40,13 +43,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Enter Interest Rate "
+        android:fontFamily="monospace"
         android:textColor="@color/navy"
         android:textSize="15dp"></TextView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rate"
-        android:hint="Interest Rate %"
+        android:hint="Rate %"
         android:textSize="15dp"
         android:inputType="numberDecimal"
         android:singleLine="true"
@@ -56,32 +60,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Number of month"
+        android:text="Installment Period "
+        android:fontFamily="monospace"
         android:textColor="@color/navy"
         android:textSize="15dp"></TextView>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/month"
-        android:hint="Month : 00"
+        android:id="@+id/time"
+        android:hint="No. of Months"
         android:textSize="15dp"
         android:inputType="number"
         android:singleLine="true"
         android:layout_marginBottom="20dp"
         />
-
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#8BC34A"
-        android:onClick="calculateEMI"
-        android:padding="10dp"
-        android:text="Calculate"
-        android:textColor="@color/text"></Button>
-
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/Amt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -89,6 +83,19 @@
         android:fontFamily="serif"
         android:textColor="@color/result"
         android:textSize="25dp"></TextView>
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#853F51B5"
+        android:onClick="calculateEMI"
+        android:padding="10dp"
+        android:text="Calculate"
+        android:fontFamily="monospace"
+        android:textColor="@color/text"></Button>
+
 
 
 </LinearLayout>
